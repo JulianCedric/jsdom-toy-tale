@@ -1,3 +1,5 @@
+// Some Updates (next: render form)
+
 document.addEventListener("DOMContentLoaded", () => {
 
 // Code provided: 
@@ -106,4 +108,4 @@ document.addEventListener("DOMContentLoaded", () => {
       
     })
 
-})
+}) 
