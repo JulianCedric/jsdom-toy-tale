@@ -1,4 +1,5 @@
-// 7/4 - Revisit this.. looks like the root of the error is in catching all toys data object.
+// JP, 7/4 - Revisit this.. looks like the root of the error is in catching all toys data object.
+  // ^ resolved: it was ('toy-collection') SINGULAR
 
 document.addEventListener("DOMContentLoaded", () => {
       
@@ -7,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       function renderEachToy(toy){
         console.log()
 
-        const toysCollection = document.getElementById('toys-collection')
+        const toysCollection = document.getElementById('toy-collection')
       
         const toyDiv = document.createElement('div')
         toyDiv.className = "card"
