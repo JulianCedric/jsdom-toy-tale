@@ -1,9 +1,34 @@
-// JP, 7/4 - Revisit this.. looks like the root of the error is in catching all toys data object.
-  // ^ resolved: it was ('toy-collection') SINGULAR
-
 document.addEventListener("DOMContentLoaded", () => {
+
+// Code provided: 
+
+    let addToy = false;
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const addBtn = document.querySelector("#new-toy-btn");
       
-// Fetch Andy's Toys
+      const toyFormContainer = document.querySelector(".container");
+      
+      addBtn.addEventListener("click", () => {
+        // hide & seek with the form
+      
+        addToy = !addToy;
+      
+        if (addToy) {
+          toyFormContainer.style.display = "block";
+        } 
+        else {
+          toyFormContainer.style.display = "none";
+        }
+
+      });
+
+    });
+
+//
+      
+// Fetch Andy's Toys & Add Toy Info to the Card
 
       function renderEachToy(toy){
         console.log()
@@ -34,22 +59,51 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     fetchAllToysData("http://localhost:3000/toys")
 
-  }) 
+// Add a New Toy 
 
-    // 
+  // Step 6. 
 
-    // let addToy = false;
+    function postNewToy(url, newToyObject){
+      fetch(url), {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          "name": `${newToyObject.name}`,
+          "image": `${newToyObject.image}`, 
+          "likes": `${newToyObject.likes}`
+        })
+      }
+      .then(resp => resp.json())
+      .then(newToyDataObject => renderEachMonster(newToyDataObjecct))
+    }
 
-    // document.addEventListener("DOMContentLoaded", () => {
-    //   const addBtn = document.querySelector("#new-toy-btn");
-    //   const toyFormContainer = document.querySelector(".container");
-    //   addBtn.addEventListener("click", () => {
-    //     // hide & seek with the form
-    //     addToy = !addToy;
-    //     if (addToy) {
-    //       toyFormContainer.style.display = "block";
-    //     } else {
-    //       toyFormContainer.style.display = "none";
-    //     }
-    //   });
-    // });
+  // Step 1. 
+    
+    const toyForm = document.querySelector('.add-toy-form')
+
+  // Step 2. 
+
+    toyForm.addEventListener("submit", function(e){
+    
+  // Step 3. 
+      e.preventDefault()
+
+  // Step 4. 
+
+      const newToy = {
+        name: e.target.name.value,
+        image: e.target.image.value,
+        likes: 0
+      }
+
+  // Step 6. 
+
+      postNewToy("http://localhost:3000/toys", newToy)
+      toyForm.reset()
+      
+    })
+
+})
