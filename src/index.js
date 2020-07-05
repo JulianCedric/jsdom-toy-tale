@@ -1,4 +1,4 @@
-// Some Updates (next: render form)
+// Some updates - I needed to change display: none to display: flex in index.css file
 
 document.addEventListener("DOMContentLoaded", () => {
 
