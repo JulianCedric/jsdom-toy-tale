@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
           toyFormContainer.style.display = "none";
         }
 
-      });
+      }); 
 
     });
 
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         toyDiv.innerHTML = `
                               <h2>Name: ${toy.name}</h2>
                               <img src="${toy.image}" class="toy-avatar" />
-                              <p>${toy.likes} Likes</p>
+                              <p><span class="numOfLikes">${toy.likes}</span> Likes</p>
                               <button class="like-btn">Like <3</button>
         `
         toysCollection.append(toyDiv)
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Step 6. 
 
     function postNewToy(url, newToyObject){
-      fetch(url), {
+      fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "image": `${newToyObject.image}`, 
           "likes": `${newToyObject.likes}`
         })
-      }
+      })
       .then(resp => resp.json())
       .then(newToyDataObject => renderEachMonster(newToyDataObjecct))
     }
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const newToy = {
         name: e.target.name.value,
         image: e.target.image.value,
-        likes: 0
+        likes: 0 
       }
 
   // Step 6. 
@@ -108,4 +108,41 @@ document.addEventListener("DOMContentLoaded", () => {
       
     })
 
+// Increase a Toy's Likes
+
+    function updateToyLikes(url, newNum){
+      fetch(url, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          "likes": newNum
+        })
+      })
+    }
+
+    document.addEventListener("click", function(e){
+      
+      if (e.target.className === "like-btn")
+        
+        e.preventDefault()
+
+        // how to target parentNode of 'like-btn' ?? 
+
+        toyDiv = e.target.parentNode
+        // ^ move up the collection where 'like-btn' is located
+        toyId = toyDiv.id 
+        likesHtml = toyDiv.querySelector('p')
+        // ^ then down that collection
+
+        const currentNumOfLikes = parseInt(likesHtml.innerText.split(" ")[0])
+        const newNumOfLikes = currentNumOfLikes + 1
+        likesHtml.innerText = `${newNumOfLikes} Likes`
+        updateToyLikes(`http://localhost:3000/toys/${toyId}`, `${newNumOfLikes}`)
+    })
+
 }) 
+
+///
