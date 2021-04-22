@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const toyForm = document.querySelector('.add-toy-form')
 
-  // Step 2. 
+  // Step 2. Next, we add an event listener to our new toyForm variable, specifying the name of the event it will be listening for and writing out the work (callback function) that follows immediately after.
 
     toyForm.addEventListener("submit", function(e){
     
