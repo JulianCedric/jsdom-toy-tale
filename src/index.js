@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(newToyDataObject => renderEachMonster(newToyDataObjecct))
     }
 
-  // Step 1. 
+  // Step 1. In this first step, we identify the node that will be doing the event 'listening', and then we store that node in the toyForm variable / constant.
     
     const toyForm = document.querySelector('.add-toy-form')
 
