@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Add a New Toy 
 
-  // Step 6. 
+  // Step 5. Here, we define our new postNewToy function, which 
 
     function postNewToy(url, newToyObject){
       fetch(url, {
@@ -90,10 +90,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     toyForm.addEventListener("submit", function(e){
     
-  // Step 3. 
+  // Step 3. We add this to ensure the page does not automatically reload when the event is triggered.
+
       e.preventDefault()
 
-  // Step 4. 
+  // Step 4. Here is where we define the key/value pairs of our new newToy object to be added.
 
       const newToy = {
         name: e.target.name.value,
@@ -101,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
         likes: 0 
       }
 
-  // Step 6. 
+  // Step 6. Finally, we invoke our new postNewToy function from Step 5 (above) and reset the toy form.
 
       postNewToy("http://localhost:3000/toys", newToy)
       toyForm.reset()
