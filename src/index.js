@@ -1,8 +1,4 @@
-// Some updates - I needed to change display: none to display: flex in index.css file
-
 document.addEventListener("DOMContentLoaded", () => {
-
-// Code provided: 
 
     let addToy = false;
 
@@ -27,13 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }); 
 
     });
-
-//
       
-// Fetch Andy's Toys & Add Toy Info to the Card
+// Fetch Andy's Toys & Add Toy Info to the Card:
 
       function renderEachToy(toy){
-        console.log()
 
         const toysCollection = document.getElementById('toy-collection')
       
@@ -142,8 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const newNumOfLikes = currentNumOfLikes + 1
         likesHtml.innerText = `${newNumOfLikes} Likes`
         updateToyLikes(`http://localhost:3000/toys/${toyId}`, `${newNumOfLikes}`)
-    })
+    });
 
-}) 
-
-///
+});
