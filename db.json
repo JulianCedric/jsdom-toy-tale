@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": "13"
+      "likes": "15"
     },
     {
       "id": 2,
@@ -65,6 +65,12 @@
       "image": "test1",
       "likes": "0",
       "id": 11
+    },
+    {
+      "name": "Mecha Godzilla",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61GicVHU6oL._AC_SL1000_.jpg",
+      "likes": "2",
+      "id": 12
     }
   ]
 }

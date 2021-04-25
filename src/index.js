@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
         likes: 0 
       }
 
-  // Step 6. Finally, we invoke our new postNewToy function from Step 5 (above) and reset the toy form.
+  // Step 6. Finally, we invoke our new postNewToy function from Step 5 (above) and reset the toy form. 
 
       postNewToy("http://localhost:3000/toys", newToy)
       toyForm.reset()
@@ -122,8 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.target.className === "like-btn")
         
         e.preventDefault()
-
-        // how to target parentNode of 'like-btn' ?? 
 
         toyDiv = e.target.parentNode
         // ^ move up the collection where 'like-btn' is located
