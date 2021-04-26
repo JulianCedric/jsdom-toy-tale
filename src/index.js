@@ -23,6 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }); 
 
     });
+
+    const mainMenu = document.querySelector(".menu")
+
+    mainMenu.addEventListener("click", function(e) {
+      console.log("mainMenu clicked")
+    })
       
 // Fetch Andy's Toys & Add Toy Info to the Card:
 
