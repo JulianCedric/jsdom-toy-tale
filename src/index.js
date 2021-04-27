@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loginMenu.appendChild(testP)
 
+    testP.innerHTML = "Login2"
+
     let addToy = false;
 
     document.addEventListener("DOMContentLoaded", () => {
