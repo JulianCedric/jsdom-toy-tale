@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
 
-    document.addEventListener("click", function(e){
+    document.addEventListener("click", function(e) {
       
       if (e.target.className === "like-btn")
         
@@ -142,6 +142,16 @@ document.addEventListener("DOMContentLoaded", () => {
         likesHtml.innerText = `${newNumOfLikes} Likes`
         updateToyLikes(`http://localhost:3000/toys/${toyId}`, `${newNumOfLikes}`)
     });
+
+    document.addEventListener("click", function(e) {
+      
+      if (e.target.className === "delete-btn")
+      
+      e.preventDefault()
+
+      console.log("delete button clicked")
+
+    })
 
 });
 
