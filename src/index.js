@@ -43,7 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
                               <h2>Name: ${toy.name}</h2>
                               <img src="${toy.image}" class="toy-avatar" />
                               <p><span class="numOfLikes">${toy.likes}</span> Likes</p>
-                              <button class="like-btn">Like <3</button>
+                              <button class="like-btn">Like</button>
+                              <br/>
+                              <button class="delete-btn">Delete</button>
         `
         toysCollection.append(toyDiv)
     }
@@ -142,3 +144,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+// 
