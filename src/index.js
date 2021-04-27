@@ -1,12 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    let testP = document.createElement('p')
+    // let testP = document.createElement('p');
 
-    let loginMenu = document.querySelector('div.menu')
+    let loginMenu = document.querySelector('div.menu');
 
-    loginMenu.appendChild(testP)
+    // loginMenu.appendChild(testP);
+    // testP.innerHTML = "Login2";
+    // testP.style.backgroundColor = '#515DA2';
+    // testP.style.textAlign = 'right';
 
-    testP.innerHTML = "Login2"
+    loginMenu.style.backgroundColor= '#515DA2';
+    loginMenu.style.textAlign = 'right';
 
     let addToy = false;
 
@@ -151,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateToyLikes(`http://localhost:3000/toys/${toyId}`, `${newNumOfLikes}`)
     });
 
-    document.addEventListener("click", function(e) {
+    loginMenu.addEventListener("click", function(e) {
       
       if (e.target.className === "delete-btn")
       
