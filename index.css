@@ -90,7 +90,6 @@ button:hover {
   color: #e04b52;
 }
 
-
 .input-text {
   border-radius: 5px;
   height: 2rem;
@@ -102,4 +101,13 @@ button:hover {
 
 .login-form {
   width: 80%
+}
+
+#loginContainer {
+  padding: 1rem;
+  width: stretch;
+  height: auto;
+  display: flex;
+  background: #515DA2;
+  opacity: .8;
 }

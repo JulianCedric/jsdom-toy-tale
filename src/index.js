@@ -9,13 +9,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loginButton.addEventListener("click", function(e) {
     console.log("'Login' Button Clicked")
-  })
 
-  const loginContainer = document.createElement("div")
-  const loginForm = document.createElement("div")
-  loginForm.innerHTML = `<h1>Login</h1>`
+    const loginFormContainer = document.getElementById("loginContainer")
 
-  document.body.appendChild(loginContainer)
+    loginFormContainer.innerHTML = `
+      <form class="login-form">
+      <h1>Login</h1>
+      <input
+        type="text"
+        name="name"
+        value=""
+        placeholder="Your First Name..."
+        class="input-text"
+      />
+      <br />
+      <input
+        type="submit"
+        name="submit"
+        value="Submit"
+        class="submit"
+      />
+    </form>
+    `
+    const loginDiv = loginFormContainer.innerHTML
+
+    loginFormContainer.appendChild(loginDiv)
+
+  });
 
   let addToy = false;
 
