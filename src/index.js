@@ -1,17 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // let testP = document.createElement('p');
-
-    let loginMenu = document.querySelector('div.menu');
-
-    // loginMenu.appendChild(testP);
-    // testP.innerHTML = "Login2";
-    // testP.style.backgroundColor = '#515DA2';
-    // testP.style.textAlign = 'right';
-
-    loginMenu.style.backgroundColor= '#515DA2';
-    loginMenu.style.textAlign = 'right';
-
     let addToy = false;
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -58,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
                               <button class="like-btn">Like</button>
                               <br/>
                               <button class="delete-btn">Delete</button>
+                              <br/>
         `
         toysCollection.append(toyDiv)
     }
@@ -155,14 +144,26 @@ document.addEventListener("DOMContentLoaded", () => {
         updateToyLikes(`http://localhost:3000/toys/${toyId}`, `${newNumOfLikes}`)
     });
 
-    loginMenu.addEventListener("click", function(e) {
-      
-      if (e.target.className === "delete-btn")
-      
-      e.preventDefault()
+    // let testP = document.createElement('p');
 
-      console.log("delete button clicked")
+    const loginMenu = document.querySelector('div.menu');
+    const loginButton = document.createElement('button')
+    loginButton.innerHTML = "Login"
 
-    })
+    // loginMenu.appendChild(testP);
+    // testP.innerHTML = "Login2";
+    // testP.style.backgroundColor = '#515DA2';
+    // testP.style.textAlign = 'right';
+
+    loginMenu.style.backgroundColor= '#515DA2';
+    loginMenu.style.textAlign = 'right';
+
+    loginMenu.appendChild(loginButton);
+
+    const deleteButton = document.getElementsByClassName("delete-btn")
+
+    deleteButton.addEventListener("click", function(e) {      
+      alert("delete button clicked");
+    });
 
 });
