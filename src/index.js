@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    let testP = document.createElement('p')
+
+    let loginMenu = document.querySelector('div.menu')
+
+    loginMenu.appendChild(testP)
+
     let addToy = false;
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -154,5 +160,3 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
 });
-
-// 
