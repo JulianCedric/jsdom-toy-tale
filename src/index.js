@@ -1,34 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    let addToy = false;
+  const loginMenu = document.querySelector('div.menu');
+  loginMenu.style.backgroundColor= '#515DA2';
+  loginMenu.style.textAlign = 'right';
+  const loginButton = document.createElement('button')
+  loginButton.innerHTML = "Login"
+  loginMenu.appendChild(loginButton);
 
-    document.addEventListener("DOMContentLoaded", () => {
+  loginButton.addEventListener("click", function(e) {
+    console.log("'Login' Button Clicked")
+  })
 
-      const addBtn = document.querySelector("#new-toy-btn");
-      
-      const toyFormContainer = document.querySelector(".container");
-      
-      addBtn.addEventListener("click", () => {
-        // hide & seek with the form
-      
-        addToy = !addToy;
-      
-        if (addToy) {
-          toyFormContainer.style.display = "block";
-        } 
-        else {
-          toyFormContainer.style.display = "none";
-        }
+  const loginContainer = document.createElement("div")
+  const loginForm = document.createElement("div")
+  loginForm.innerHTML = `<h1>Login</h1>`
 
-      }); 
+  document.body.appendChild(loginContainer)
 
-    });
+  let addToy = false;
 
-    const mainMenu = document.querySelector(".menu")
+  document.addEventListener("DOMContentLoaded", () => {
 
-    mainMenu.addEventListener("click", function(e) {
-      console.log("mainMenu clicked")
-    })
+    const addBtn = document.querySelector("#new-toy-btn");
+    
+    const toyFormContainer = document.querySelector(".container");
+    
+    addBtn.addEventListener("click", () => {
+      // hide & seek with the form
+    
+      addToy = !addToy;
+    
+      if (addToy) {
+        toyFormContainer.style.display = "block";
+      } 
+      else {
+        toyFormContainer.style.display = "none";
+      }
+
+    }); 
+
+  });
       
 // Fetch Andy's Toys & Add Toy Info to the Card:
 
@@ -143,22 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
         likesHtml.innerText = `${newNumOfLikes} Likes`
         updateToyLikes(`http://localhost:3000/toys/${toyId}`, `${newNumOfLikes}`)
     });
-
-    // let testP = document.createElement('p');
-
-    const loginMenu = document.querySelector('div.menu');
-    const loginButton = document.createElement('button')
-    loginButton.innerHTML = "Login"
-
-    // loginMenu.appendChild(testP);
-    // testP.innerHTML = "Login2";
-    // testP.style.backgroundColor = '#515DA2';
-    // testP.style.textAlign = 'right';
-
-    loginMenu.style.backgroundColor= '#515DA2';
-    loginMenu.style.textAlign = 'right';
-
-    loginMenu.appendChild(loginButton);
 
     const deleteButton = document.getElementsByClassName("delete-btn")
 
