@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+// Next: Conditionally render login form, and add a personalized greeting.
+
   const loginMenu = document.querySelector('div.menu');
   loginMenu.style.backgroundColor= '#515DA2';
   loginMenu.style.textAlign = 'right';
