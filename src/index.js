@@ -9,6 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
   loginButton.innerHTML = "Login"
   loginMenu.appendChild(loginButton);
 
+  const greetingContainer = document.querySelector('div.greetingContainer')
+  console.log(greetingContainer)
+  const greetingP = document.createElement('p')
+  console.log(greetingP)
+  greetingP.innerHTML = `Welcome back!`
+  greetingContainer.appendChild(greetingP)
+
   loginButton.addEventListener("click", function(e) {
     console.log("'Login' Button Clicked")
 
@@ -177,10 +184,10 @@ document.addEventListener("DOMContentLoaded", () => {
         updateToyLikes(`http://localhost:3000/toys/${toyId}`, `${newNumOfLikes}`)
     });
 
-    const deleteButton = document.getElementsByClassName("delete-btn")
+    // const deleteButton = document.getElementsByClassName("delete-btn")
 
-    deleteButton.addEventListener("click", function(e) {      
-      alert("delete button clicked");
-    });
+    // deleteButton.addEventListener("click", function(e) {      
+    //   alert("delete button clicked");
+    // });
 
 });
