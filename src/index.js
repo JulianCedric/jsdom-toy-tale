@@ -1,6 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // For next JS Practice session: Add 'delete' functionality.
+  // For next JS Practice session: See 'CRUD' below.
+
+  // CRUD: 
+    // DONE.      Create:  Render a form that a user can use to enter info about a new toy instance.
+    // DONE.      Create:  Create that new toy instance.
+    // DONE.      Read:    Render all toy instances.
+    // DONE.      Read:    Render an individual toy instance.
+    //            Update:  Render a form that a user can use to edit info about an existing toy instance.
+    //            Update:  Render that new toy instance.
+    //            Delete:  Delete an existing toy instance.
 
   const loginMenu = document.querySelector('div.menu');
   loginMenu.style.backgroundColor= '#515DA2';
