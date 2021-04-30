@@ -102,14 +102,28 @@ document.addEventListener("DOMContentLoaded", () => {
       // .then(allToysDataObject => renderAllToys(allToysDataObject))
     // };
     // ^ES6
-    function fetchAllToysData(url) {
+    // function fetchAllToysData(url) {
+    //   fetch(url)
+    //   .then(function(response) {
+    //     return response.json();
+    //   })
+    //   .then(function(allToysDataObject) {
+    //     renderAllToys(allToysDataObject);
+    //   })
+    // };
+    // function fetchAllToysData(url) {
+    //   fetch(url)
+    //   .then(function (response) {
+    //     return response.json();
+    //   })
+    //   .then(function (allToysDataObject) {
+    //     renderAllToys(allToysDataObject);
+    //   })
+    // };
+    fetchAllToysData = url => {
       fetch(url)
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(allToysDataObject) {
-        renderAllToys(allToysDataObject);
-      })
+      .then(r => r.json())
+      .then(allToysDataObject => renderAllToys(allToysDataObject))
     };
     fetchAllToysData("http://localhost:3000/toys")
 
