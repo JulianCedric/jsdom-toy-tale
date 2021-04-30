@@ -103,11 +103,11 @@ button:hover {
   width: 80%
 }
 
-#loginContainer {
+/* #loginContainer {
   padding: 1rem;
   width: stretch;
   height: auto;
   display: flex;
   background: #515DA2;
   opacity: .8;
-}
+} */

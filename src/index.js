@@ -9,12 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
   loginButton.innerHTML = "Login"
   loginMenu.appendChild(loginButton);
 
-  const greetingContainer = document.querySelector('div.greetingContainer')
-  console.log(greetingContainer)
-  const greetingP = document.createElement('p')
-  console.log(greetingP)
-  greetingP.innerHTML = `Welcome back!`
-  greetingContainer.appendChild(greetingP)
+  // const greetingContainer = document.querySelector('div.greetingContainer')
+  // console.log(greetingContainer)
+  // greetingContainer.style.backgroundColor= '#515DA2';
+  // const greetingP = document.createElement('p')
+  // console.log(greetingP)
+  // greetingP.innerHTML = `Welcome back!`
+  // greetingContainer.appendChild(greetingP)
 
   loginButton.addEventListener("click", function(e) {
     console.log("'Login' Button Clicked")
