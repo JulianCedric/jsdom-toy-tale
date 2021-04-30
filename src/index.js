@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-// Next: Conditionally render login form, and add a personalized greeting.
+  // For next JS Practice session: Add 'delete' functionality.
 
   const loginMenu = document.querySelector('div.menu');
   loginMenu.style.backgroundColor= '#515DA2';
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .then(resp => resp.json())
       .then(newToyDataObject => renderEachMonster(newToyDataObjecct))
-    }
+    };
 
   // Step 1. In this first step, we identify the node that will be doing the event 'listening', and then we store that node in the toyForm variable / constant.
     
@@ -229,11 +229,4 @@ document.addEventListener("DOMContentLoaded", () => {
         likesHtml.innerText = `${newNumOfLikes} Likes`
         updateToyLikes(`http://localhost:3000/toys/${toyId}`, `${newNumOfLikes}`)
     });
-
-    // const deleteButton = document.getElementsByClassName("delete-btn")
-
-    // deleteButton.addEventListener("click", function(e) {      
-    //   alert("delete button clicked");
-    // });
-
 });
