@@ -73,11 +73,12 @@ document.addEventListener("DOMContentLoaded", () => {
       
 // Fetch Andy's Toys & Add Toy Info to the Card:
 
-      function renderEachToy(toy){
+      function renderEachToy(toy) {
 
         const toysCollection = document.getElementById('toy-collection')
       
         const toyDiv = document.createElement('div')
+        console.log("toyDiv: ", toyDiv)
         toyDiv.className = "card"
         toyDiv.id = toy.id
         toyDiv.innerHTML = `
@@ -92,16 +93,19 @@ document.addEventListener("DOMContentLoaded", () => {
         toysCollection.append(toyDiv)
     }
 
-    function renderAllToys(toys){
-        toys.forEach(toy => renderEachToy(toy))
-    }
+    // function renderAllToys(toys){
+    //     toys.forEach(toy => renderEachToy(toy))
+    // };
+
+    renderAllToys = toys => {
+      toys.forEach(toy => renderEachToy(toy));
+    };
 
     // function fetchAllToysData(url) {
       // fetch(url)
       // .then(resp => resp.json())
       // .then(allToysDataObject => renderAllToys(allToysDataObject))
     // };
-    // ^ES6
     // function fetchAllToysData(url) {
     //   fetch(url)
     //   .then(function(response) {
