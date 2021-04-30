@@ -73,25 +73,43 @@ document.addEventListener("DOMContentLoaded", () => {
       
 // Fetch Andy's Toys & Add Toy Info to the Card:
 
-      function renderEachToy(toy) {
+    //   function renderEachToy(toy) {
 
-        const toysCollection = document.getElementById('toy-collection')
+    //     const toysCollection = document.getElementById('toy-collection')
       
-        const toyDiv = document.createElement('div')
-        console.log("toyDiv: ", toyDiv)
-        toyDiv.className = "card"
-        toyDiv.id = toy.id
-        toyDiv.innerHTML = `
-                              <h2>Name: ${toy.name}</h2>
-                              <img src="${toy.image}" class="toy-avatar" />
-                              <p><span class="numOfLikes">${toy.likes}</span> Likes</p>
-                              <button class="like-btn">Like</button>
-                              <br/>
-                              <button class="delete-btn">Delete</button>
-                              <br/>
-        `
-        toysCollection.append(toyDiv)
-    }
+    //     const toyDiv = document.createElement('div')
+    //     console.log("toyDiv: ", toyDiv)
+    //     toyDiv.className = "card"
+    //     console.log(toy.id)
+    //     toyDiv.id = toy.id
+    //     toyDiv.innerHTML = `
+    //                           <h2>Name: ${toy.name}</h2>
+    //                           <img src="${toy.image}" class="toy-avatar" />
+    //                           <p><span class="numOfLikes">${toy.likes}</span> Likes</p>
+    //                           <button class="like-btn">Like</button>
+    //                           <br/>
+    //                           <button class="delete-btn">Delete</button>
+    //                           <br/>
+    //     `
+    //     toysCollection.append(toyDiv)
+    // };
+
+    renderEachToy = toy => {
+      const toysCollection = document.getElementById('toy-collection')
+      const toyDiv = document.createElement('div')
+      toyDiv.className='card'
+      toyDiv.id = toy.id
+      toyDiv.innerHTML = `
+        <h2>Name: ${toy.name}</h2>
+        <img src="${toy.image}" class="toy-avatar" />
+        <p><span class="numOfLikes">${toy.likes}</span> Likes</p>
+        <button class="like-btn">Like</button>
+        <br/>
+        <button class="delete-btn">Delete</button>
+        <br/> 
+      `
+      toysCollection.appendChild(toyDiv)
+    };
 
     // function renderAllToys(toys){
     //     toys.forEach(toy => renderEachToy(toy))
