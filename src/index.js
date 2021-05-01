@@ -223,18 +223,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.addEventListener("click", function(e) {
       if (e.target.className === "like-btn")
-        
         e.preventDefault()
-
         toyDiv = e.target.parentNode
-        // ^ move up the collection where 'like-btn' is located
         toyId = toyDiv.id 
         likesHtml = toyDiv.querySelector('p')
-        // ^ then down that collection
-
         const currentNumOfLikes = parseInt(likesHtml.innerText.split(" ")[0])
         const newNumOfLikes = currentNumOfLikes + 1
         likesHtml.innerText = `${newNumOfLikes} Likes`
         updateToyLikes(`http://localhost:3000/toys/${toyId}`, `${newNumOfLikes}`)
     });
+
+    document.addEventListener("click", function(e) {
+      if (e.target.className === "delete-btn")
+      e.preventDefault()
+      toyDiv.e.target.parentNode
+      toyId = toyDiv.id
+      
+    });
+
 });
