@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          "Accept": "application/json"
+          Accept: "application/json"
         },
         body: JSON.stringify({
           "likes": newNum
@@ -222,7 +222,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     document.addEventListener("click", function(e) {
-      
       if (e.target.className === "like-btn")
         
         e.preventDefault()
