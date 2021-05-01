@@ -234,11 +234,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("click", function(e) {
-      if (e.target.className === "delete-btn")
-      e.preventDefault()
-      toyDiv.e.target.parentNode
-      toyId = toyDiv.id
-      
+      // if (e.target.className === "delete-btn")
+      // e.preventDefault()
+      // toyDiv.e.target.parentNode
+      // toyId = toyDiv.id
+
     });
 
 });
